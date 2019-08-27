@@ -17,5 +17,5 @@ steps:
 - script: yarn nyc report --reporter text-lcov > coverage.lcov
   displayName: Report code coverage
 
-- script: yarn codecov --token $CODECOV_TOKEN
+- script: yarn codecov --token $(CODECOV_TOKEN)
   displayName: Upload code coverage
