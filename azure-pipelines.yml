@@ -1,3 +1,6 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
 variables:
   YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
 
@@ -20,7 +23,5 @@ steps:
 - script: yarn nyc report --reporter text-lcov > coverage.lcov
   displayName: Report code coverage
 
-- script: yarn codecov --token $CODECOV_TOKEN
+- script: yarn codecov
   displayName: Upload code coverage
-  env:
-    CODECOV_TOKEN: $(CODECOV_TOKEN)
