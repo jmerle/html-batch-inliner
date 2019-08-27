@@ -1,7 +1,7 @@
 {
   "name": "html-batch-inliner",
-  "version": "1.0.0",
-  "description": "A CLI to easily and quickly inline all images, CSS stylesheets and JS scripts in multiple HTML files.",
+  "version": "0.0.0",
+  "description": "A CLI to quickly and easily inline all images, CSS stylesheets and JS scripts in all HTML files in a directory.",
   "keywords": [
     "oclif",
     "cli",
@@ -60,6 +60,7 @@
     "ts-node": "^8",
     "tslint": "^5",
     "tslint-config-prettier": "^1.18.0",
+    "tslint-no-unused-expression-chai": "^0.1.4",
     "typescript": "^3.3"
   },
   "engines": {

@@ -3250,6 +3250,13 @@ tslint-microsoft-contrib@^5.0.2:
   dependencies:
     tsutils "^2.27.2 <2.29.0"
 
+tslint-no-unused-expression-chai@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/tslint-no-unused-expression-chai/-/tslint-no-unused-expression-chai-0.1.4.tgz#f4a2c9dd3306088f44eb7574cf470082b09ade49"
+  integrity sha512-frEWKNTcq7VsaWKgUxMDOB2N/cmQadVkUtUGIut+2K4nv/uFXPfgJyPjuNC/cHyfUVqIkHMAvHOCL+d/McU3nQ==
+  dependencies:
+    tsutils "^3.0.0"
+
 tslint-xo@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/tslint-xo/-/tslint-xo-0.9.0.tgz#e1faa505fecd5ac705460fc9f5ca417c3036c14f"
