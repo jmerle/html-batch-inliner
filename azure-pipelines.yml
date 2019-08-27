@@ -1,0 +1,26 @@
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+
+steps:
+- task: CacheBeta@0
+  inputs:
+    key: yarn | $(Agent.OS) | yarn.lock
+    path: $(YARN_CACHE_FOLDER)
+  displayName: Cache Yarn packages
+
+- script: yarn --frozen-lockfile
+  displayName: Install dependencies
+
+- script: yarn lint
+  displayName: Lint
+
+- script: yarn test
+  displayName: Test
+
+- script: yarn nyc report --reporter text-lcov > coverage.lcov
+  displayName: Report code coverage
+
+- script: yarn codecov --token $CODECOV_TOKEN
+  displayName: Upload code coverage
+  env:
+    CODECOV_TOKEN: $(CODECOV_TOKEN)
