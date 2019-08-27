@@ -1,0 +1,86 @@
+{
+  "name": "html-batch-inliner",
+  "version": "1.0.0",
+  "description": "A CLI to easily and quickly inline all images, CSS stylesheets and JS scripts in multiple HTML files.",
+  "keywords": [
+    "oclif",
+    "cli",
+    "inline",
+    "inliner",
+    "html",
+    "css",
+    "images",
+    "batch"
+  ],
+  "homepage": "https://github.com/jmerle/html-batch-inliner",
+  "bugs": "https://github.com/jmerle/html-batch-inliner/issues",
+  "repository": "jmerle/html-batch-inliner",
+  "license": "MIT",
+  "author": "Jasper van Merle",
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "html-batch-inliner": "./bin/run"
+  },
+  "scripts": {
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "lint": "yarn lint:tslint && yarn lint:prettier",
+    "lint:prettier": "prettier --check --ignore-path .gitignore '**/*.{ts,json}'",
+    "lint:tslint": "tslint -p tsconfig.json -c tslint.json -t stylish",
+    "fix": "yarn fix:tslint && yarn fix:prettier",
+    "fix:prettier": "prettier --write --ignore-path .gitignore '**/*.{ts,json}'",
+    "fix:tslint": "yarn lint:tslint --fix",
+    "release": "np",
+    "prepack": "rm -rf lib && tsc -b"
+  },
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1",
+    "@oclif/tslint": "^3",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.5",
+    "mocha": "^5",
+    "np": "^5.0.3",
+    "nyc": "^13",
+    "prettier": "^1.18.2",
+    "ts-node": "^8",
+    "tslint": "^5",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "oclif": {
+    "bin": "html-batch-inliner"
+  }
+}
