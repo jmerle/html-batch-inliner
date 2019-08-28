@@ -21,6 +21,5 @@ steps:
 - script: yarn codecov --token $CODECOV_TOKEN
   condition: not(variables['System.PullRequest.IsFork'])
   displayName: Upload code coverage
-  inputs:
-    env:
-      CODECOV_TOKEN: $(CODECOV_TOKEN)
+  env:
+    CODECOV_TOKEN: $(CODECOV_TOKEN)
