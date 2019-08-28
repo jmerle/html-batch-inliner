@@ -18,8 +18,8 @@ steps:
   condition: eq(variables['System.PullRequest.IsFork'], 'False')
   displayName: Report code coverage
 
-- script: yarn codecov --token $CODECOV_TOKEN
+- script: yarn codecov
   condition: eq(variables['System.PullRequest.IsFork'], 'False')
   displayName: Upload code coverage
   env:
-    CODECOV_TOKEN: $(CODECOV_TOKEN)
+    CODECOV_TOKEN: $(codecovToken)
