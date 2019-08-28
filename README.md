@@ -3,8 +3,9 @@
 A CLI to quickly and easily inline all images, CSS stylesheets and JS scripts in all HTML files in a directory.
 
 [![Oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/html-batch-inliner.svg)](https://npmjs.org/package/html-batch-inliner)
+[![Build Status](https://dev.azure.com/jmerle/html-batch-inliner/_apis/build/status/Build?branchName=master)](https://dev.azure.com/jmerle/html-batch-inliner/_build/latest?definitionId=3&branchName=master)
 [![Codecov](https://codecov.io/gh/jmerle/html-batch-inliner/branch/master/graph/badge.svg)](https://codecov.io/gh/jmerle/html-batch-inliner)
+[![Version](https://img.shields.io/npm/v/html-batch-inliner.svg)](https://npmjs.org/package/html-batch-inliner)
 [![License](https://img.shields.io/npm/l/html-batch-inliner.svg)](https://github.com/jmerle/html-batch-inliner/blob/master/package.json)
 
 ## Install
