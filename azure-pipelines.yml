@@ -15,11 +15,11 @@ steps:
   displayName: Test
 
 - script: yarn nyc report --reporter text-lcov > coverage.lcov
-  condition: not(variables['System.PullRequest.IsFork'])
+  condition: eq(variables['System.PullRequest.IsFork'], 'False')
   displayName: Report code coverage
 
 - script: yarn codecov --token $CODECOV_TOKEN
-  condition: not(variables['System.PullRequest.IsFork'])
+  condition: eq(variables['System.PullRequest.IsFork'], 'False')
   displayName: Upload code coverage
   env:
     CODECOV_TOKEN: $(CODECOV_TOKEN)
